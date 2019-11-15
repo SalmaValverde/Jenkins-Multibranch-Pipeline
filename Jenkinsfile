@@ -3,12 +3,14 @@ pipeline {
         stages {
         stage('First') {
                 steps {
-                echo  env.rule="True"
+		sh 'echo "Step One"'
+                echo  env.rule="False"
                 }
         }
         stage('Second'){
                 steps{
-                 sh 'echo "Updating Second Stage"'
+		sh 'echo "Step Two"'
+                sh 'echo "Updating Second Stage"'
                 }
 
                  when {
